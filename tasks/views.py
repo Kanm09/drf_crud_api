@@ -15,8 +15,11 @@ def guardar_tarea(request):
 
 def eliminar_tarea(request, tarea_id):
     # Toma la tarea que conincida con el tarea_id y la elimina
-    tarea = Tasks.objects.get(id=tarea_id)
-    tarea.delete()
+    try:
+        tarea = Tasks.objects.get(id=tarea_id)
+        tarea.delete()
+    except Tasks.DoesNotExist:
+        pass # Maneja el error si la tarea no existe 
     return redirect('home')
 
 def editar_tarea(request, tarea_id):
