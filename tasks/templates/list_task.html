@@ -1,0 +1,45 @@
+{% extends 'layouts/base.html' %} {% block content %}
+
+<div class="row d-flex">
+    <div class="col-md-4 pt-4">
+        <form action="guardar_tarea/" method="POST">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="" class="form-label mb-3">Titulo</label>
+                <input type="text" class="form-control" name="titulo">
+            </div>
+            <div class="mb-3">
+                <label for="" class="form-label mb-3">Tecnologia</label>
+                <input type="text" class="form-control" name="tecnologia">
+            </div>
+            <div class="mb-3">
+                <label for="" class="form-label">Descripcion</label>
+                <textarea name="descripcion" id="" class="form-control"></textarea>
+            </div>
+            <button class="btn btn-primary w-100">Guardar</button>
+        </form>
+    </div>
+    <div class="col-md-8 pt-4">
+        {% for tarea in tareas %}
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h4 class="card-title fw-bold text-success">{{tarea.titulo}}</h5>
+                    <p class="">{{tarea.descripcion}}</p>
+                    <p class="">{{tarea.technology}}</p>
+                    <p class="">{{tarea.created_at}}</p>
+                    <div class="d-flex gap-2">
+                    <form action="{% url 'eliminar_tarea' tarea.id %}">
+                        <button class="btn btn-danger">Eliminar</button>
+                    </form>
+                    <form action="{% url 'editar_tarea' tarea.id %}">
+                        <button class="btn btn-warning">Editar</button>
+                    </form>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'layouts/base.html' %}
+{% block content %}
+    
+<div class="col-md-8 pt-4">
+  <form action="{% url 'actualizar_tarea' tareas.id %}" method="POST">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="" class="form-label mb-3">Titulo</label>
+      <input type="text" class="form-control" name="titulo" value="{{ tareas.titulo }}" />
+    </div>
+    <div class="mb-3">
+      <label for="" class="form-label mb-3">Tecnologia</label>
+      <input type="text" class="form-control" name="tecnologia" value="{{ tareas.technology }}"/>
+    </div>
+    <div class="mb-3">
+      <label for="" class="form-label">Descripcion</label>
+      <textarea name="descripcion" id="" class="form-control">{{ tareas.descripcion }}</textarea>
+    </div>
+    <button type="submit" class="btn btn-success" id="submitBtn">
+    <span class="spinner-border spinner-border-sm d-none" id="spinner"></span>
+    Actualizar
+</button>
+  </form>
+</div>
+
+{% endblock %}
+
