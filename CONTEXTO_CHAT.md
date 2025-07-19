@@ -25,15 +25,18 @@
 - ✅ Tests de modelos Django (TasksTestCase)
 - ✅ Ejecutar tests + interpretar resultados
 
-## 🔄 DÍA 4 EN PROGRESO (17 julio 2025) - API Testing:
+
+## ✅ DÍA 4 COMPLETADO (19 julio 2025) - API Testing:
 ### COMPLETADO:
 - ✅ Test para endpoint GET (listar tareas)
+- ✅ Test para endpoint POST (crear tarea)
+- ✅ Test para endpoint PUT (actualizar tarea)
+- ✅ Test para endpoint DELETE (eliminar tarea)
 - ✅ setUp avanzado implementado
+- ✅ Commit y push de los tests
 
-### EN PROGRESO:
-- 🔄 Test para endpoint POST (crear tarea) - SIGUIENTE
-- ⏳ Test para endpoint PUT (actualizar tarea)
-- ⏳ Test para endpoint DELETE (eliminar tarea)
+### SIGUIENTE PASO:
+- 🚀 Preparación para deploy: variables de entorno y configuración producción
 - ⏳ Coverage report básico
 
 ## 🎯 DÍA 4 - JUEVES (17 julio 2025)
@@ -83,11 +86,9 @@ drf_crud_api/
 - ✅ Test para endpoint GET API
 
 ## 🎯 PRÓXIMOS OBJETIVOS:
-1. **Test POST API** (crear tarea) - INMEDIATO
-2. **Test PUT API** (actualizar tarea)
-3. **Test DELETE API** (eliminar tarea)
-4. **Coverage report** (medir cobertura de tests)
-5. **Deploy preparation** (variables de entorno)
+1. **Preparar variables de entorno y configuración para producción** (python-decouple, settings.py)
+2. **Coverage report** (medir cobertura de tests)
+3. **Deploy en Railway/Heroku**
 
 ## 🚨 IMPORTANTE:
 - **NUNCA MODIFICAR ARCHIVOS AUTOMÁTICAMENTE** - Usuario prefiere hacer todo él mismo
